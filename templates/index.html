@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quantum Compress | Futuristic Document Compressor</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="particles" id="particles-js"></div>
+
+    <nav class="main-nav">
+        <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+        <a href="{{ url_for('developers') }}" class="nav-link">Developers</a>
+    </nav>
+    
+    <div class="container">
+        <header>
+            <h1 class="glow">QUANTUM<span>COMPRESS</span></h1>
+            <p class="tagline">Next-Gen Document Compression Technology</p>
+        </header>
+
+        <main>
+            <div class="upload-area" id="uploadArea">
+                <div class="upload-icon">
+                    <i class="fas fa-file-upload pulse"></i>
+                </div>
+                <h2>Upload Your Document</h2>
+                <p class="supported-formats">Supports: PDF, DOCX, PPTX, TXT, JPG, PNG, MP4</p>
+                
+                <form id="uploadForm" action="/compress" method="POST" enctype="multipart/form-data">
+                    <input type="file" id="fileInput" name="file" accept=".pdf, .jpg, .jpeg, .png, .txt, .docx, .pptx, .mp4" required>
+                    <label for="fileInput" class="btn-gradient">Choose File</label>
+                    <button type="submit" class="btn-gradient compress-btn" id="compressBtn">
+                        <span class="btn-text">Compress Now</span>
+                        <span class="btn-loading" style="display: none;">
+                            <i class="fas fa-spinner fa-spin"></i> Processing...
+                        </span>
+                    </button>
+                </form>
+                
+                <div class="progress-container" id="progressContainer" style="display: none;">
+                    <div class="progress-bar" id="progressBar"></div>
+                    <div class="progress-text" id="progressText">0%</div>
+                </div>
+            </div>
+
+            <div class="result-area" id="resultArea" style="display: none;">
+                <div class="success-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <h2>Compression Successful!</h2>
+                <div class="stats">
+                    <div class="stat-box">
+                        <div class="stat-value" id="originalSize">0 MB</div>
+                        <div class="stat-label">Original</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="compressedSize">0 MB</div>
+                        <div class="stat-label">Compressed</div>
+                    </div>
+                    <div class="stat-box">
+                        <div class="stat-value" id="reductionPercent">0%</div>
+                        <div class="stat-label">Reduction</div>
+                    </div>
+                </div>
+                <!-- Updated Download Button -->
+                <a href="#" class="btn-gradient" id="downloadBtn" download>
+                 <i class="fas fa-download"></i> Download Compressed File
+                </a>
+                <button class="btn-gradient btn-new-file" id="newFileBtn">
+                <i class="fas fa-redo"></i> Compress Another File
+                </button>
+            </div>
+        </main>
+
+        <footer>
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="fas fa-bolt"></i>
+                    <span>AI Compression</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-lock"></i>
+                    <span>Secure Processing</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-infinity"></i>
+                    <span>Unlimited Files</span>
+                </div>
+            </div>
+            <p class="copyright">© 2025 QuantumCompress | All Rights Reserved</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+
+</html>
