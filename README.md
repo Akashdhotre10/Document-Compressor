@@ -82,4 +82,4 @@ Feel free to fork this repo and submit pull requests. All contributions are welc
 
 ---
 
-Built with ❤️ 
+Made with ❤️ by [Akash Dhotre](https://github.com/Akashdhotre10) 
