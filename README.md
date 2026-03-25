@@ -1,5 +1,5 @@
 
-# Quantum Compress
+# Quantum Compressor
 
 Quantum Compress is a full-stack, web-based document compression tool built with Python and Flask. It allows users to upload and compress various file types, including PDFs, images, documents, text files, and videos — all through a clean and intuitive interface.
 
